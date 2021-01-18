@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".cartfrag">
 
-    <androidx.appcompat.widget.Toolbar
+    <!--<androidx.appcompat.widget.Toolbar
         android:id="@+id/tool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+-->
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:text="Total"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="553dp" />
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="504dp" />
 
     <TextView
         android:id="@+id/textView20"
@@ -43,8 +43,8 @@
         android:layout_height="wrap_content"
         android:text="Total"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="553dp" />
+        tools:layout_editor_absoluteX="246dp"
+        tools:layout_editor_absoluteY="504dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -84,16 +84,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Clear Cart"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="638dp" />
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="602dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Checkout"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="638dp" />
+        tools:layout_editor_absoluteX="246dp"
+        tools:layout_editor_absoluteY="602dp" />
 
+    <com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        app:active_item_color="@color/white"
+        app:centre_button_color="@color/centre_button_color"
+        app:inactive_item_color="@color/white"
+        app:space_background_color="@color/black"
+        app:centre_button_icon="@drawable/search"
+        app:space_item_icon_size="@dimen/space_item_icon_default_size"
+        app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+        app:space_item_text_size="@dimen/space_item_text_default_size"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

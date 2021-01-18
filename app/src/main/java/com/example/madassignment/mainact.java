@@ -1,7 +1,10 @@
 package com.example.madassignment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -10,60 +13,92 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.luseen.spacenavigation.SpaceItem;
+import com.luseen.spacenavigation.SpaceNavigationView;
+import com.luseen.spacenavigation.SpaceOnClickListener;
 
-public class mainact extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    DrawerLayout drawerLayout;
+public class mainact extends AppCompatActivity {
+    BottomNavigationView btmnvm;
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
+    SpaceNavigationView NavigationView;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
 
-        drawerLayout = findViewById(R.id.draw);
-        toolbar = findViewById(R.id.tool);
-        NavigationView navigationView;
-        navigationView = findViewById(R.id.navview);
+        NavigationView = (SpaceNavigationView) findViewById(R.id.space);
+        NavigationView.initWithSaveInstanceState(savedInstanceState);
+        NavigationView.addSpaceItem(new SpaceItem("Home", R.drawable.dashboard));
+        NavigationView.addSpaceItem(new SpaceItem("Account", R.drawable.account));
+        NavigationView.addSpaceItem(new SpaceItem("Cart", R.drawable.cart));
+        NavigationView.addSpaceItem(new SpaceItem("Contact", R.drawable.contact));
+        NavigationView.showIconOnly();
 
-        setSupportActionBar(toolbar);
-        navigationView.setNavigationItemSelectedListener(this);
+        NavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+            @Override
+            public void onCentreButtonClick() {
+                Intent intent = new Intent(mainact.this,search.class);
+                startActivity(intent);;
+            }
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener((toggle));
-        toggle.syncState();
+            @Override
+            public void onItemClick(int itemIndex, String itemName) {
+                switch(itemName) {
+                    case "Home":
+                        Intent intent = new Intent(mainact.this,homefrag.class);
+                        startActivity(intent);
+                        break;
+                    case "Account":
+                        Intent intent2 = new Intent(mainact.this,act_accmgmtfrag.class);
+                        startActivity(intent2);
+                        break;
+                    case "Cart":
+                        Intent intent3 = new Intent(mainact.this,cartfrag.class);
+                        startActivity(intent3);
+                        break;
+                    case "Contact":
+                        Intent intent4 = new Intent(mainact.this,confrag.class);
+                        startActivity(intent4);
+                        break;
+                }
+            }
 
-        if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new homefrag()).commit();
-        }
+            @Override
+            public void onItemReselected(int itemIndex, String itemName) {
+            }
+        });
+        /*btmnvm = findViewById(R.id.menu);
 
+        btmnvm.setSelectedItemId(R.id.homef);
+
+        btmnvm.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.homef:
+                        startActivity(new Intent(getApplicationContext(),homefrag.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.edprof:
+                        startActivity(new Intent(getApplicationContext(),homefrag.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.viewcart:
+                        startActivity(new Intent(getApplicationContext(),homefrag.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });*/
     }
 
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer((GravityCompat.START));
-        } else {
-            super.onBackPressed();
-        }
-    }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.edprof:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new act_accmgmtfrag()).commit();
-                break;
-            case R.id.viewcart:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new cartfrag()).commit();
-                break;
-            case R.id.conus:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new confrag()).commit();
-                break;
-            default:
-                break;
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return false;
-    }
+
+
 }

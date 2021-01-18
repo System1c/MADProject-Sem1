@@ -22,9 +22,18 @@
             android:theme="@style/Theme.MADAssignment"/>
         <activity android:name=".login_act"
             android:theme="@style/Theme.MADAssignment"/>
+        <activity android:name=".homefrag"
+            android:theme="@style/Theme.MADAssignment"/>
         <activity android:name=".mainact"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+        <activity android:name=".act_accmgmtfrag"
+            android:theme="@style/Theme.MADAssignment" />
+        <activity android:name=".cartfrag"
+            android:theme="@style/Theme.MADAssignment" />
+        <activity android:name=".confrag"
+            android:theme="@style/Theme.MADAssignment" />
+        <activity android:name=".search"
+            android:theme="@style/Theme.MADAssignment" />
     </application>
     <uses-permission
         android:name="android.permission.CALL_COMPANION_APP" />
