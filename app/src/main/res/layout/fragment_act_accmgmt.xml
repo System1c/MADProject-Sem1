@@ -20,7 +20,7 @@
 
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/fname"
         android:layout_width="382dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword4"
+        android:id="@+id/pw1"
         android:layout_width="378dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/chadet"
         android:layout_width="73dp"
         android:layout_height="60dp"
         android:layout_marginStart="176dp"
@@ -129,7 +129,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/pw2"
         android:layout_width="378dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
