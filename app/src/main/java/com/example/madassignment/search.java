@@ -35,13 +35,15 @@ public class search extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     private String cat1;
 
+    public static String pname;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_search);
         getSupportActionBar().hide();
 
-        reslist = findViewById(R.id.result_list);
+
+
 
         fstore = FirebaseFirestore.getInstance();
         reslist = findViewById(R.id.result_list);
@@ -97,7 +99,6 @@ public class search extends AppCompatActivity {
             sfield = findViewById(R.id.search_field);
             imgbtn = findViewById(R.id.search_btn);
 
-            reslist = findViewById(R.id.result_list);
 
             fstore = FirebaseFirestore.getInstance();
             reslist = findViewById(R.id.result_list);
@@ -120,6 +121,26 @@ public class search extends AppCompatActivity {
                     holder.lprice.setText(model.getPrice() + " ");
                     holder.ldesc.setText(model.getDescription());
                     Picasso.get().load(model.getImage()).into(holder.limage);
+                    pname = model.getDescription();
+
+
+                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                            proddetafrag demoFragment = new proddetafrag();
+                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.srch, demoFragment).addToBackStack(null).commit();
+                        }
+                    });
+
+                    holder.limage.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                            proddetafrag demoFragment = new proddetafrag();
+                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.srch, demoFragment).addToBackStack(null).commit();
+                        }
+                    });
 
                 }
             };
@@ -206,4 +227,6 @@ public class search extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
     }
+
+
 }
