@@ -4,13 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +29,12 @@ import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class search extends AppCompatActivity {
+
     private EditText sfield;
     private ImageButton imgbtn;
     private RecyclerView reslist;
@@ -34,8 +42,10 @@ public class search extends AppCompatActivity {
     private FirebaseFirestore fstore;
     private FirestoreRecyclerAdapter adapter;
     private String cat1;
+    public static List<String> cartstore =  new ArrayList<>();
+    private int cnt;
+    public static int view =0;
 
-    public static String pname;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +80,7 @@ public class search extends AppCompatActivity {
 
                 switch(itemName) {
                     case "Home":
-                        Intent intent = new Intent(search.this,homefrag.class);
+                        Intent intent = new Intent(search.this,mainact.class);
                         startActivity(intent);
                         break;
                     case "Account":
@@ -121,24 +131,18 @@ public class search extends AppCompatActivity {
                     holder.lprice.setText(model.getPrice() + " ");
                     holder.ldesc.setText(model.getDescription());
                     Picasso.get().load(model.getImage()).into(holder.limage);
-                    pname = model.getDescription();
 
 
-                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    holder.adbtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                            proddetafrag demoFragment = new proddetafrag();
-                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.srch, demoFragment).addToBackStack(null).commit();
-                        }
-                    });
-
-                    holder.limage.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                            proddetafrag demoFragment = new proddetafrag();
-                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.srch, demoFragment).addToBackStack(null).commit();
+                            cnt = 0;
+                            String s =  model.getId();
+                            cartstore.add(s);
+                            cnt++;
+                            Toast.makeText(search.this, s + " Successfully Added to Cart ",Toast.LENGTH_LONG).show();
+                            Log.d("this is my array", "arr: " + cartstore);
+                            view = 1;
                         }
                     });
 
@@ -188,6 +192,18 @@ public class search extends AppCompatActivity {
                             holder.ldesc.setText(model.getDescription());
                             Picasso.get().load(model.getImage()).into(holder.limage);
 
+                            holder.adbtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    cnt = 0;
+                                    String s =  model.getId();
+                                    cartstore.add(s);
+                                    cnt++;
+                                    Toast.makeText(search.this, s + " Successfully Added to Cart ",Toast.LENGTH_LONG).show();
+                                    Log.d("this is my array", "arr: " + cartstore);
+                                    view = 1;
+                                }
+                            });
                         }
                     };
                     reslist.setHasFixedSize(true);
@@ -205,6 +221,7 @@ public class search extends AppCompatActivity {
         private TextView lprice;
         private TextView ldesc;
         private ImageButton limage;
+        private Button adbtn;
 
         public ProductsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -213,6 +230,8 @@ public class search extends AppCompatActivity {
             lprice = itemView.findViewById(R.id.lprice);
             ldesc = itemView.findViewById(R.id.ldesc);
             limage = itemView.findViewById(R.id.limage);
+            adbtn = itemView.findViewById(R.id.addcrt);
+
         }
     }
 

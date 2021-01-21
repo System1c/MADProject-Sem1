@@ -18,83 +18,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 -->
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginRight="90dp"
         android:text="Your Cart"
         android:textSize="36sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="48dp" />
+        app:layout_constraintBottom_toTopOf="@+id/cart_list"
+        app:layout_constraintRight_toLeftOf="@+id/total"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="37dp" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
         android:text="Total"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="504dp" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total"
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="246dp"
-        tools:layout_editor_absoluteY="504dp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="217dp"
-        android:text="Item #1"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="48dp" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="208dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="237dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_dialog"
-        tools:layout_editor_absoluteX="329dp"
-        tools:layout_editor_absoluteY="208dp" />
+        app:layout_constraintBottom_toTopOf="@+id/cart_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_goneMarginLeft="40dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/clrc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="572dp"
+        android:layout_marginEnd="245dp"
+        android:layout_marginBottom="111dp"
         android:text="Clear Cart"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="602dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/chko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="572dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="111dp"
         android:text="Checkout"
-        tools:layout_editor_absoluteX="246dp"
-        tools:layout_editor_absoluteY="602dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.luseen.spacenavigation.SpaceNavigationView
         android:id="@+id/space"
@@ -110,5 +84,18 @@
         app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
         app:space_item_icon_size="@dimen/space_item_icon_default_size"
         app:space_item_text_size="@dimen/space_item_text_default_size" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_list"
+        android:layout_width="match_parent"
+        android:layout_height="386dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="177dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

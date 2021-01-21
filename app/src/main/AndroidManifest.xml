@@ -2,39 +2,57 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.madassignment">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.CALL_COMPANION_APP" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
-        android:supportsRtl="true"
-        >
-        <activity android:name=".first_act"
-            android:theme="@style/Theme.MADAssignment">
+        android:supportsRtl="true">
+        <activity
+            android:name=".forgot_act"
+            android:theme="@style/Theme.MADAssignment"
+            android:label="@string/title_activity_forgot_act">
+        </activity>
 
+        <activity
+            android:name=".first_act"
+            android:theme="@style/Theme.MADAssignment">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".reg_act"
-            android:theme="@style/Theme.MADAssignment"/>
-        <activity android:name=".login_act"
-            android:theme="@style/Theme.MADAssignment"/>
-        <activity android:name=".homefrag"
-            android:theme="@style/Theme.MADAssignment"/>
-        <activity android:name=".mainact"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".act_accmgmtfrag"
+        <activity
+            android:name=".reg_act"
             android:theme="@style/Theme.MADAssignment" />
-        <activity android:name=".cartfrag"
+        <activity
+            android:name=".login_act"
             android:theme="@style/Theme.MADAssignment" />
-        <activity android:name=".confrag"
+        <activity
+            android:name=".homefrag"
             android:theme="@style/Theme.MADAssignment" />
-        <activity android:name=".search"
+        <activity
+            android:name=".mainact"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".act_accmgmtfrag"
+            android:theme="@style/Theme.MADAssignment" />
+        <activity
+            android:name=".cartfrag"
+            android:theme="@style/Theme.MADAssignment" />
+        <activity
+            android:name=".confrag"
+            android:theme="@style/Theme.MADAssignment" />
+        <activity
+            android:name=".search"
             android:theme="@style/Theme.MADAssignment" />
     </application>
-    <uses-permission
-        android:name="android.permission.CALL_COMPANION_APP" />
+
 </manifest>

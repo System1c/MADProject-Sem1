@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 public class login_act extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
-    private Button login;
+    private Button login, forgot;
     EditText lem, lpw;
 
     @Override
@@ -44,6 +44,15 @@ public class login_act extends AppCompatActivity implements View.OnClickListener
 
         login= (Button)findViewById(R.id.proceed);
         login.setOnClickListener(this);
+
+        forgot = findViewById(R.id.forgot);
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login_act.this, forgot_act.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

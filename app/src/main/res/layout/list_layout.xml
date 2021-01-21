@@ -16,6 +16,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp">-->
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -67,6 +69,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lprice"/>
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ldesc"
+            android:text="Add to Cart"
+            android:textSize="18dp"
+            android:id="@+id/addcrt"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </RelativeLayout>
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

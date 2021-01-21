@@ -5,14 +5,16 @@ public class prodmod {
     private long price;
     private String description;
     private String image;
+    private String id;
 
     private prodmod(){}
 
-    private prodmod(String name, long price, String description, String image){
+    private prodmod(String name, long price, String description, String image, String id){
         this.name=name;
         this.price=price;
         this.description=description;
         this.image=image;
+        this.id=id;
     }
 
     public String getName() {
@@ -45,5 +47,13 @@ public class prodmod {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
