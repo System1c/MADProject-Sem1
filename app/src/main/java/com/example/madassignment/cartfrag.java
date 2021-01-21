@@ -182,7 +182,9 @@ public class cartfrag extends AppCompatActivity {
         ckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                itm.clear();
+                Intent intent = new Intent(cartfrag.this, checkout_act.class);
+                startActivity(intent);
             }
         });
 

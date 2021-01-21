@@ -34,7 +34,7 @@ public class forgot_act extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forgot_act);
         getSupportActionBar().hide();
-        email = findViewById(R.id.editemail);
+        /*email = findViewById(R.id.editemail);
         fname = findViewById(R.id.fname);
         fp = findViewById(R.id.pw1);
         sp = findViewById(R.id.pw2);
@@ -95,13 +95,13 @@ public class forgot_act extends AppCompatActivity {
                     err=0;
                 }
             });
-        }
+        }*/
 
 
 
     }
 
-    private void fieldver() {
+   /* private void fieldver() {
         sp.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -156,8 +156,8 @@ public class forgot_act extends AppCompatActivity {
 
 
     }
-
-    private void verifyfields() {
+*/
+    /*private void verifyfields() {
         String em = email.getText().toString().trim();
         String pw = fp.getText().toString().trim();
         String pw2 = sp.getText().toString().trim();
@@ -201,5 +201,5 @@ public class forgot_act extends AppCompatActivity {
     private boolean validEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
-    }
+    }*/
 }
