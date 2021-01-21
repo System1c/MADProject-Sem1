@@ -1,7 +1,13 @@
 package com.example.madassignment;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +16,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.maps.GoogleMap;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
@@ -19,6 +27,7 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
 public class confrag extends AppCompatActivity {
 
     SpaceNavigationView NavigationView;
+    TextView phn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +76,31 @@ public class confrag extends AppCompatActivity {
             public void onItemReselected(int itemIndex, String itemName) {
             }
         });
+
+        phn = findViewById(R.id.phone);
+        phn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT > 22) {
+
+                    if (ActivityCompat.checkSelfPermission(confrag.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+                        ActivityCompat.requestPermissions(confrag.this, new String[]{Manifest.permission.CALL_PHONE}, 101);
+
+                        return;
+                    }
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:" + phn.getText().toString().trim()));
+                    startActivity(callIntent);
+                } else {
+
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:+" + phn.getText().toString().trim()));
+                    startActivity(callIntent);
+                }
+            }
+        });
+
     }
 
 }

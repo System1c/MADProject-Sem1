@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class act_accmgmtfrag extends AppCompatActivity {
     EditText email, fname, fp, sp;
     FirebaseFirestore fstore;
     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-    ImageButton chdet;
+    Button chdet;
     int err=0;
 
     protected void onCreate(Bundle savedInstanceState) {
