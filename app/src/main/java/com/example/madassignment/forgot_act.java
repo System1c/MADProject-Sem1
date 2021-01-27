@@ -57,6 +57,7 @@ public class forgot_act extends AppCompatActivity  {
                                     Toast.makeText(forgot_act.this, "Check your email to reset your password!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(forgot_act.this, login_act.class);
                                     startActivity(intent);
+                                    finish();
                                 } else {
                                     Toast.makeText(forgot_act.this, "Fail to send reset password email!", Toast.LENGTH_SHORT).show();
                                 }
@@ -70,47 +71,6 @@ public class forgot_act extends AppCompatActivity  {
     }
 
 
-    /*private void fieldver() {
-
-        email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                verifyfields();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-
-
-    }
-
-    private void verifyfields() {
-        String em = email.getText().toString().trim();
-
-        if (!validEmail(em)) {
-            email.setError("Please Enter A Valid E-mail");
-            email.requestFocus();
-            err=1;
-            return;
-        }
-        else{
-            err=0;
-        }
-    }
-
-    private boolean validEmail(String email) {
-        Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return pattern.matcher(email).matches();
-    }*/
 
 
 }

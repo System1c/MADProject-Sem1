@@ -35,6 +35,7 @@ public class first_act extends AppCompatActivity
                 public void onClick(View v) {
                     Intent intent = new Intent(first_act.this,reg_act.class);
                     startActivity(intent);
+
                 }
             });
 
@@ -43,6 +44,7 @@ public class first_act extends AppCompatActivity
                 public void onClick(View v) {
                     Intent intent = new Intent(first_act.this,login_act.class);
                     startActivity(intent);
+                    finish();
                 }
             });
         }

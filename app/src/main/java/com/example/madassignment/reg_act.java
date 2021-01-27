@@ -54,6 +54,9 @@ public class reg_act extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.registerbut:
                 regUser();
+                Intent intent2 = new Intent(reg_act.this, first_act.class);
+                startActivity(intent2);
+                finish();
                 break;
         }
     }
