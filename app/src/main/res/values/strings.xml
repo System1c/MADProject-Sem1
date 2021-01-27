@@ -57,4 +57,9 @@
     <string name="resdet">Reset Details</string>
     <string name="chimg">Checkout Image</string>
     <string name="srcimg">Search Image</string>
+
+    <string name="ycrt">Your Cart</string>
+    <string name="tlt">Total</string>
+    <string name="clrc">Clear Cart</string>
+    <string name="chko">Checkout</string>
 </resources>
