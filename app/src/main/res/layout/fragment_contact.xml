@@ -14,7 +14,7 @@
         android:layout_marginTop="341dp"
         android:layout_marginEnd="196dp"
         android:layout_marginBottom="342dp"
-        android:text="Contact Us"
+        android:text="@string/conus"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,16 +28,19 @@
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="291dp"
         android:background="#dadada"
         android:clickable="true"
-        android:text="+94 112345678"
+        android:text="@string/phn"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/mail"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/con"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
 
     <ImageButton
         android:id="@+id/imageButton13"
@@ -53,7 +56,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/whatsapp" />
+        app:srcCompat="@mipmap/whatsapp"
+        android:contentDescription="@string/consharedesc" />
 
     <ImageButton
         android:id="@+id/imageButton12"
@@ -69,7 +73,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/facebook" />
+        app:srcCompat="@mipmap/facebook"
+        android:contentDescription="@string/consharedesc" />
 
     <ImageButton
         android:id="@+id/imageButton14"
@@ -85,7 +90,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/sms" />
+        app:srcCompat="@mipmap/sms"
+        android:contentDescription="@string/consharedesc"/>
 
     <TextView
         android:id="@+id/mail"
@@ -95,13 +101,13 @@
         android:layout_marginTop="454dp"
         android:layout_marginEnd="193dp"
         android:layout_marginBottom="253dp"
-        android:text="E-mail: mail@mail.com"
+        android:autoLink="email"
+        android:text="@string/ceml"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autoLink = "email"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.luseen.spacenavigation.SpaceNavigationView
         android:id="@+id/space"
@@ -117,5 +123,16 @@
         app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
         app:space_item_icon_size="@dimen/space_item_icon_default_size"
         app:space_item_text_size="@dimen/space_item_text_default_size" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="410dp"
+        android:layout_height="259dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="472dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

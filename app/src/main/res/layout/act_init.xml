@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_color">
@@ -14,7 +13,7 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="623dp"
-        android:text="Welcome"
+        android:text="@string/wel"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +30,7 @@
         android:layout_marginTop="109dp"
         android:layout_marginEnd="154dp"
         android:layout_marginBottom="598dp"
-        android:text="to LookGood"
+        android:text="@string/tol"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +46,7 @@
         android:layout_marginTop="499dp"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="173dp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +61,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="93dp"
         android:background="@android:color/transparent"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,5 +80,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shop" />
+        app:srcCompat="@drawable/shop"
+        android:contentDescription="@string/flogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

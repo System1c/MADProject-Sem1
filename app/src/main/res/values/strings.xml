@@ -12,4 +12,49 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="enemail">Enter E-mail</string>
+    <string name="pass">Enter Password</string>
+    <string name="pass2">Re-Enter Password</string>
+    <string name="foglog">Forgot Login</string>
+    <string name="arr">-></string>
+    <string name="todo">TODO</string>
+    <string name="wel">Welcome</string>
+    <string name="tol">to LookGood</string>
+    <string name="flogo">welcome logo</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="back">Back</string>
+    <string name="srchp">Search Product</string>
+    <string name="sp">Search here</string>
+    <string name="blnk"></string>
+    <string name="prdi">Product Image</string>
+    <string name="ocf">Order has been confirmed!</string>
+    <string name="bkh">Back to Home</string>
+    <string name="fnm">Full Name</string>
+    <string name="yen">Your E-Mail</string>
+    <string name="npass">Enter New Password</string>
+    <string name="npass2">Re-Enter New Password</string>
+    <string name="conus">Contact Us</string>
+    <string name="phn">+94 112345678</string>
+    <string name="ceml">E-mail: mail@mail.com</string>
+    <string name="consharedesc">Share Button</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="perfume">Perfume</string>
+    <string name="shoes">Shoes</string>
+    <string name="watch">Watches</string>
+    <string name="deal">Deals</string>
+    <string name="homemain">Main Image</string>
+    <string name="logoim">Logo Image</string>
+    <string name="categim">Category Image</string>
+
+    <string name="prdtit">Product Name</string>
+    <string name="prddesc">Product Description</string>
+    <string name="prprice">Product Price</string>
+    <string name="adtc">Add to Cart</string>
+    <string name="primg">Product Image</string>
+
+    <string name="resdet">Reset Details</string>
+    <string name="chimg">Checkout Image</string>
+    <string name="srcimg">Search Image</string>
 </resources>

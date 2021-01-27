@@ -16,7 +16,7 @@
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="424dp"
         android:ems="10"
-        android:hint="Enter E-mail"
+        android:hint="@string/enemail"
         android:inputType="textEmailAddress"
         android:textColor="#FFFFFF"
         android:textColorHint="@color/white"
@@ -24,7 +24,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/password"
@@ -35,14 +36,15 @@
         android:layout_marginEnd="45dp"
         android:layout_marginBottom="340dp"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/pass"
         android:inputType="textPassword"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        android:autofillHints="" />
 
 
     <Button
@@ -52,7 +54,7 @@
         android:layout_marginStart="51dp"
         android:layout_marginEnd="267dp"
         android:layout_marginBottom="244dp"
-        android:text="Forgot Login"
+        android:text="@string/foglog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
@@ -68,13 +70,45 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/rbutton"
         android:gravity="center_vertical|center_horizontal"
-        android:text="->"
+        android:text="@string/arr"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgot"
         app:layout_constraintVertical_bias="0.781" />
+
+    <TextView
+        android:id="@+id/loghead"
+        android:layout_width="145dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginEnd="221dp"
+        android:layout_marginBottom="515dp"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="147dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
-        android:text="Search Product"
+        android:text="@string/srchp"
         android:textColor="#555555"
         android:textSize="24sp" />
 
@@ -32,14 +32,15 @@
         android:layout_toStartOf="@+id/search_btn"
         android:background="@drawable/search_layout"
         android:ems="10"
-        android:hint="Search here"
+        android:hint="@string/sp"
         android:inputType="textPersonName"
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="10dp"
         android:textColor="#999999"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:importantForAutofill="no" />
 
     <ImageButton
         android:id="@+id/search_btn"
@@ -50,7 +51,8 @@
         android:layout_alignTop="@+id/search_field"
         android:layout_marginRight="30dp"
         android:background="@android:color/background_light"
-        app:srcCompat="@mipmap/search_button" />
+        app:srcCompat="@mipmap/search_button"
+        android:contentDescription="@string/srcimg"/>
 
     <com.luseen.spacenavigation.SpaceNavigationView
         android:id="@+id/space"

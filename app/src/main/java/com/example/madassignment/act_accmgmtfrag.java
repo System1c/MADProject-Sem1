@@ -1,5 +1,6 @@
 package com.example.madassignment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -47,11 +48,20 @@ public class act_accmgmtfrag extends AppCompatActivity {
     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
     Button chdet;
     int err=0;
+    ProgressDialog nDialog;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_act_accmgmt);
         getSupportActionBar().hide();
+
+        nDialog = new ProgressDialog(act_accmgmtfrag.this);
+        nDialog.setMessage("Connecting to Firebase");
+        nDialog.setTitle("Getting Account Info");
+        nDialog.setIndeterminate(false);
+        nDialog.setCancelable(true);
+        nDialog.show();
+
 
         navigationView = (SpaceNavigationView) findViewById(R.id.space);
         navigationView.initWithSaveInstanceState(savedInstanceState);
@@ -67,7 +77,7 @@ public class act_accmgmtfrag extends AppCompatActivity {
             @Override
             public void onCentreButtonClick() {
                 Intent intent = new Intent(act_accmgmtfrag.this,search.class);
-                startActivity(intent);;
+                startActivity(intent);
             }
 
             @Override
@@ -104,11 +114,14 @@ public class act_accmgmtfrag extends AppCompatActivity {
         sp = findViewById(R.id.pw2);
 
 
+
+
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference uidRef = rootRef.child("lookgood--mad").child(uid);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null) {
+
 
 
             ValueEventListener eventListener = new ValueEventListener() {
@@ -118,6 +131,7 @@ public class act_accmgmtfrag extends AppCompatActivity {
                     fname.setText(name);
                     String email1 = dataSnapshot.child("email").getValue(String.class);
                     email.setText(email1);
+                    nDialog.dismiss();
                 }
 
                 @Override
@@ -126,9 +140,14 @@ public class act_accmgmtfrag extends AppCompatActivity {
             uidRef.addListenerForSingleValueEvent(eventListener);
 
         }
+        else if(user == null){
+
+            Toast.makeText(act_accmgmtfrag.this, "Please Login",Toast.LENGTH_LONG).show();
+        }
         fieldver();
         chdet = findViewById(R.id.chadet);
         if(err==0) {
+
 
             chdet.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -137,15 +156,22 @@ public class act_accmgmtfrag extends AppCompatActivity {
                     String sem = email.getText().toString();
                     String sfn = fname.getText().toString();
                     String ssp = sp.getText().toString();
-                    Toast.makeText(act_accmgmtfrag.this, sfn,Toast.LENGTH_LONG).show();
+
+                    nDialog = new ProgressDialog(act_accmgmtfrag.this);
                     if(sp == null || fp == null) {
                         verifyfields();
                     }
                     else {
-                            rootRef.child("lookgood--mad").child(uid).child("fname").setValue(sfn);
-                            rootRef.child("lookgood--mad").child(uid).child("email").setValue(sem);
+
+
+
+                        rootRef.child("lookgood--mad").child(uid).child("fname").setValue(sfn);
+                        rootRef.child("lookgood--mad").child(uid).child("email").setValue(sem);
                             rootRef.child("lookgood--mad").child(uid).child("password").setValue(ssp);
 
+                        user.updateEmail(sem);
+                        user.updatePassword(ssp);
+                        Toast.makeText(act_accmgmtfrag.this, "Successfully Changed Account Information",Toast.LENGTH_LONG).show();
                     }
                 }
             });

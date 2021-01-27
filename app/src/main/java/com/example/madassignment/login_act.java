@@ -3,6 +3,7 @@ package com.example.madassignment;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class login_act extends AppCompatActivity implements View.OnClickListener
     private FirebaseAuth mAuth;
     private Button login, forgot;
     EditText lem, lpw;
-
+    ProgressDialog nDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,9 @@ public class login_act extends AppCompatActivity implements View.OnClickListener
         getSupportActionBar().hide();
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+
+
 
 
         lem = findViewById(R.id.email);
@@ -51,6 +55,8 @@ public class login_act extends AppCompatActivity implements View.OnClickListener
             public void onClick(View v) {
                 Intent intent = new Intent(login_act.this, forgot_act.class);
                 startActivity(intent);
+
+
             }
         });
     }
@@ -85,16 +91,26 @@ public class login_act extends AppCompatActivity implements View.OnClickListener
             lem.requestFocus();
             return;
         }
+
+        nDialog = new ProgressDialog(login_act.this);
+        nDialog.setMessage("Connecting to Firebase");
+        nDialog.setTitle("Verifying Credentials");
+        nDialog.setIndeterminate(false);
+        nDialog.setCancelable(true);
+        nDialog.show();
+
         mAuth.signInWithEmailAndPassword(pem, ppw).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         if (task.isSuccessful()) {
                             Toast.makeText(login_act.this, "User Logged In",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(login_act.this, homefrag.class);
                             startActivity(intent);
+                            nDialog.dismiss();
                         } else {
                             Toast.makeText(login_act.this, "Invalid Credentials",Toast.LENGTH_LONG).show();
-
+                            nDialog.dismiss();
                         }
 
                         // ...

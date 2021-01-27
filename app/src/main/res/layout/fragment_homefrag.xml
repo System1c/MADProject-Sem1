@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/conlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homefrag">
@@ -20,7 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.245"
         app:srcCompat="@drawable/back"
-        tools:srcCompat="@drawable/back" />
+        tools:srcCompat="@drawable/back"
+        android:contentDescription="@string/homemain"/>
 
     <ImageButton
         android:id="@+id/female"
@@ -36,7 +36,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avatar" />
+        app:srcCompat="@drawable/avatar"
+        android:contentDescription="@string/categim"/>
 
     <ImageButton
         android:id="@+id/perfume"
@@ -52,7 +53,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/perfume" />
+        app:srcCompat="@drawable/perfume"
+        android:contentDescription="@string/categim"/>
 
     <ImageButton
         android:id="@+id/shoe"
@@ -69,7 +71,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/shoe" />
+        tools:srcCompat="@drawable/shoe"
+        android:contentDescription="@string/categim"/>
 
     <ImageButton
         android:id="@+id/male"
@@ -85,7 +88,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shirt" />
+        app:srcCompat="@drawable/shirt"
+        android:contentDescription="@string/categim"/>
 
     <ImageButton
         android:id="@+id/watch"
@@ -101,7 +105,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/watch" />
+        app:srcCompat="@drawable/watch"
+        android:contentDescription="@string/categim"/>
 
     <ImageButton
         android:id="@+id/deals"
@@ -117,7 +122,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/label" />
+        app:srcCompat="@drawable/label"
+        android:contentDescription="@string/categim"/>
 
     <com.luseen.spacenavigation.SpaceNavigationView
         android:id="@+id/space"
@@ -139,7 +145,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:text="Male"
+        android:text="@string/male"
         app:layout_constraintBottom_toTopOf="@+id/perfume"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/male" />
@@ -149,7 +155,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"
-        android:text="Female"
+        android:text="@string/female"
         app:layout_constraintBottom_toTopOf="@+id/watch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/female" />
@@ -159,7 +165,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="49dp"
-        android:text="Shoes"
+        android:text="@string/shoes"
         app:layout_constraintBottom_toTopOf="@+id/deals"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/shoe"
@@ -170,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
-        android:text="Perfume"
+        android:text="@string/perfume"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/perfume" />
 
@@ -179,7 +185,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
-        android:text="Watches"
+        android:text="@string/watch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/watch" />
 
@@ -188,7 +194,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
-        android:text="Deals"
+        android:text="@string/deal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deals" />
 
@@ -205,5 +211,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/logoim"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

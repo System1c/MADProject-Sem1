@@ -25,7 +25,7 @@
         android:id="@+id/lname"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:text="Product Name"
+        android:text="@string/prdtit"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -41,28 +41,28 @@
             android:scaleType="centerCrop"
             android:layout_marginTop="2dp"
             android:layout_centerHorizontal="true"
-            />
+            android:contentDescription="@string/primg"/>
 
 
         <TextView
         android:id="@+id/lprice"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:text="Product Description"
+        android:text="@string/prprice"
         android:textSize="18dp"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lname"
-            android:layout_below="@+id/limage"/>
+            android:layout_below="@+id/limage" />
 
     <TextView
         android:id="@+id/ldesc"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lprice"
-        android:text="Product Desc"
+        android:text="@string/prddesc"
         android:textSize="18dp"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
@@ -74,7 +74,7 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ldesc"
-            android:text="Add to Cart"
+            android:text="@string/adtc"
             android:textSize="18dp"
             android:id="@+id/addcrt"
             android:layout_centerHorizontal="true"
