@@ -46,7 +46,7 @@ public class act_accmgmtfrag extends AppCompatActivity {
     EditText email, fname, fp, sp;
     FirebaseFirestore fstore;
     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-    Button chdet;
+    Button chdet, lgo;
     int err=0;
     ProgressDialog nDialog;
 
@@ -186,6 +186,18 @@ public class act_accmgmtfrag extends AppCompatActivity {
                 }
             });
         }
+
+
+        lgo = findViewById(R.id.logout);
+        lgo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(act_accmgmtfrag.this, first_act.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 

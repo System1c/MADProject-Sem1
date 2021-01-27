@@ -62,4 +62,5 @@
     <string name="tlt">Total</string>
     <string name="clrc">Clear Cart</string>
     <string name="chko">Checkout</string>
+    <string name="lgo">Log Out</string>
 </resources>
